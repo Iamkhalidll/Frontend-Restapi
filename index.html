@@ -21,7 +21,7 @@
                     <p><input type="email" placeholder="E-mail" id="email" required></p>
                     <p><input type="password" placeholder="Password" id="password" required></p>
                     <p><button>CREATE ACCOUNT</button></p>
-                    <p class="login-link">already have an account?<a href="/login">Sign in</a></p>
+                    <p class="login-link">already have an account?<a href="login.html">Sign in</a></p>
                  </form>
             </div>
             <div class="wrapper-item2">
@@ -65,7 +65,7 @@
                 if (response.ok) {
                     (function redirectToPage() {
                         alert("You have sucessfully signed up")
-                        window.location.href = "/package.html";
+                        window.location.href = "package.html";
                           })();
                 } else {
                       alert(result.err)

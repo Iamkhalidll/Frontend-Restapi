@@ -61,6 +61,8 @@
             try {
                 const response = await fetch(url, requestOptions);
                 const result = await response.json();
+                const token = result.token;
+                localStorage.setItem('jwtToken', token); 
     
                 if (response.ok) {
                     (function redirectToPage() {

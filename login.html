@@ -38,10 +38,14 @@
                         });
         
                         const result = await response.json();
+                        const token = result.token;
+                        console.log(`Token: ${token}`);
+                        console.log(token)
+                        localStorage.setItem('jwtToken', token); 
                         if (response.ok) {
                            (function redirectToPage() {
                               alert("login sucessful")
-                              window.location.href = "package.html";
+                            //   window.location.href = "package.html";
                           })();} 
                         else {
                       alert(result.err) }} 

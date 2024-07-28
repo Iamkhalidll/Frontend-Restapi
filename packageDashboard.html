@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <script>
+    try {
+       ( async function getPage(){
+        const token = localStorage.getItem('jwtToken');
+        console.log(token)
+        let response = await fetch("https://project-restapi.onrender.com/api/v1/parcels",{
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+    credentials:"include"
+}
+);
+        let result = await response.json();
+        console.log(result);
+
+    })();
+    } catch (error) {
+        
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/parcel.css" type="text/css">
+    <title>Delivery form</title>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Delivery Form</h1></header>
+        <div class="wrapper">
+            <form id="deliveryForm">
+                <div class="wrapper-item1">
+                    <h2>Home Address:</h2>
+                    <p>
+                        <label for="packageName">Package Name</label>
+                        <input type="text" id="packageName" name="packageName" placeholder="Package Name">
+                    </p>
+                    <p>
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="presentLocation[address]" placeholder="Address">
+                    </p>
+                    <p>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="presentLocation[city]" placeholder="City">
+                    </p>
+                    <p>
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="presentLocation[country]" placeholder="Country">
+                    </p>
+                    <p>
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="presentLocation[state]" placeholder="State">
+                    </p>
+                    <p>
+                        <label for="description">Description</label>
+                        <textarea id="description" id="description" name="description"></textarea>
+                    </p>   
+                </div>
+                <div class="wrapper-item2">
+                    <h2>Destination:</h2>
+                    <p>
+                        <label for="address">Address</label>
+                        <input type="text" id="address2" placeholder="Address" name="destination[address]">
+                    </p>
+                    <p>
+                        <label for="city">City</label>
+                        <input type="text" id="city2" placeholder="City" name="destination[city]">
+                    </p>
+                    <p>
+                        <label for="country">Country</label>
+                        <input type="text" id="country2" placeholder="Country" name="destination[country]">
+                    </p>
+                    <p>
+                        <label for="state">State</label>
+                        <input type="text" id="state2" placeholder="State" name="destination[state]">
+                    </p>
+                </div>
+                <div class="wrapper-item3">
+                    <p><button>Deliver now</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/parcel.js"></script>
+</body>
+</html>

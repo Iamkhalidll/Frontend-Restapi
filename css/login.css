@@ -18,7 +18,7 @@ body{
 }
 .wrapper{
     padding: 1.4em;
-    background:url("abstract-blue-white-1173960.jpg");
+    background:url("../public/abstract-blue-white-1173960.jpg");
     height:450px;
 }
 .wrapper form{

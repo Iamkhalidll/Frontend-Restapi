@@ -30,8 +30,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
 
         if (response.ok) {
             (function redirectToPage() {
-                alert("You have sucessfully signed up")
-                window.location.href = "../html/package.html";
+                window.location.href = "../html/packageDashboard.html";
                   })();
         } else {
               displayError(result.err)

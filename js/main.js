@@ -1,3 +1,4 @@
+const errorDisplayer  = document.querySelector(".error-container")
 document.getElementById('signupForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -33,9 +34,13 @@ document.getElementById('signupForm').addEventListener('submit', async function(
                 window.location.href = "../html/package.html";
                   })();
         } else {
-              alert(result.err)
+              displayError(result.err)
         }
     } catch (error) {
-        console.error('Network error:', error);
+        displayError(`Network error:${error}`);
     }
 });
+function displayError(error){
+    errorDisplayer.style.display = "flex";
+    errorDisplayer.querySelector(".error-message").textContent = error;
+}

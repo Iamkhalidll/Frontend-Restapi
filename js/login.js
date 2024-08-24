@@ -1,6 +1,7 @@
+const errorDisplayer  = document.querySelector(".error-container")
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission
-
+    
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -24,8 +25,11 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
               window.location.href = "../html/packageDashboard.html";
           })();} 
         else {
-           alert(result.err) }} 
+           displayError(result.err) }} 
       catch (error) {
-        console.error('Error:', error);
+        displayError(`Error :${error}`);
     }
 });
+function displayError(error){
+    errorDisplayer.style.display = "flex";
+    errorDisplayer.querySelector(".error-message").textContent = error;}

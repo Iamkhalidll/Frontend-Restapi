@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const packageContainer = document.querySelector(".packageContainer");
+    const errorDisplayer  = document.querySelector(".error-container")
     console.log(packageContainer);
 
     async function fetchPackages() {
@@ -17,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 displayPackages(result);
             } else if (result.err === "jwt expired") {
-                alert("You have to login");
+               displayError("You have to login");
             }
         } catch (error) {
-            console.error("Error fetching packages:", error);
+            displayError(`Error fetching packages: ${error}`);
         }
     }
 
@@ -58,27 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 console.log(`Package ${packageId} deleted successfully`);
-                alert('your package has been package order has been cancelled ');
-                let answer = prompt("Would you like to create another parcel? ");
-                newPackageOrStay(answer);
+                location.reload();
             } else {
-                console.error("Failed to delete package");
+                displayError("Failed to delete package");
             }
         } catch (error) {
-            console.error("Error deleting package:", error);
+            displayError("Error deleting package:");
         }
     }
-    function newPackageOrStay(answer){
-       switch (answer) {
-        case "yes":
-            location.href = "../html/package.html";
-          break;
-        case "no":
-            location.reload();
-          break;
-        default:
-          alert("This is not a meaningful answer")
-      }
-    };
     fetchPackages();
+    function displayError(error){
+     errorDisplayer.style.display = "flex";
+     errorDisplayer.querySelector(".error-message").textContent = error;
+    }
 });

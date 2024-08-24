@@ -1,8 +1,11 @@
+const errorDisplayer = document.querySelector(".error-container");
+const cartCounter = document.querySelector(".cart-count");
+
 document.getElementById('deliveryForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     let form = e.target;
     const formData = new FormData(form);
-    console.log(formData)
+    
     const data = {
         packageName: formData.get('packageName'),
         description: formData.get('description'),
@@ -19,7 +22,6 @@ document.getElementById('deliveryForm').addEventListener('submit', async (e) => 
             state: formData.get('presentLocation[state]')
         }
     };
-    console.log(data)
 
     try {
         const token = localStorage.getItem('jwtToken');
@@ -31,26 +33,29 @@ document.getElementById('deliveryForm').addEventListener('submit', async (e) => 
             },
             body: JSON.stringify(data)
         });
+        
         let result = await response.json();
-        alert(`${result.msg}`)
-        let answer = prompt("Do you want to go to your dashboard")
-        gotoDashboard(answer.toLowerCase());
+        
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+
+        // Increment the cart count
+        incrementCount(Number(cartCounter.textContent) + 1);
+
+        // Clear the form fields
+        form.reset();
+
     } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
+        displayError(`There was a problem with the fetch operation: ${error}`);
     }
 });
-function gotoDashboard(answer){
-    switch (answer) {
-     case "yes":
-         location.href = "../html/packageDashboard.html";
-       break;
-     case "no":
-         location.reload();
-       break;
-     default:
-       alert("This is not a meaningful answer")
-   }
- };
+
+function incrementCount(value){
+    cartCounter.textContent = value;
+}
+
+function displayError(error){
+    errorDisplayer.style.display = "flex";
+    errorDisplayer.querySelector(".error-message").textContent = error;
+}

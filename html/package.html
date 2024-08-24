@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/parcel.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/errorMessage.css" type="text/css">
     <title>Delivery form</title>
 </head>
 <body>
+    <div class="cart-container">
+        <a href="packageDashboard.html"> 
+        <i class="fas fa-shopping-cart  fa-2xl" aria-hidden="true"></i>
+        <span class="cart-count">0</span>
+        </a>
+       
+    </div>
+    
     <div class="container">
         <header><h1>Delivery Form</h1></header>
         <div class="wrapper">
@@ -16,52 +26,59 @@
                     <h2>Home Address:</h2>
                     <p>
                         <label for="packageName">Package Name</label>
-                        <input type="text" id="packageName" name="packageName" placeholder="Package Name">
+                        <input type="text" id="packageName" name="packageName" placeholder="Package Name" required>
                     </p>
                     <p>
                         <label for="address">Address</label>
-                        <input type="text" id="address" name="presentLocation[address]" placeholder="Address">
+                        <input type="text" id="address" name="presentLocation[address]" placeholder="Address" required>
                     </p>
                     <p>
                         <label for="city">City</label>
-                        <input type="text" id="city" name="presentLocation[city]" placeholder="City">
+                        <input type="text" id="city" name="presentLocation[city]" placeholder="City" required>
                     </p>
                     <p>
                         <label for="country">Country</label>
-                        <input type="text" id="country" name="presentLocation[country]" placeholder="Country">
+                        <input type="text" id="country" name="presentLocation[country]" placeholder="Country" required>
                     </p>
                     <p>
                         <label for="state">State</label>
-                        <input type="text" id="state" name="presentLocation[state]" placeholder="State">
+                        <input type="text" id="state" name="presentLocation[state]" placeholder="State" required>
                     </p>
                     <p>
                         <label for="description">Description</label>
-                        <textarea id="description" id="description" name="description"></textarea>
+                        <textarea id="description" id="description" name="description" required></textarea>
                     </p>   
                 </div>
                 <div class="wrapper-item2">
                     <h2>Destination:</h2>
                     <p>
                         <label for="address">Address</label>
-                        <input type="text" id="address2" placeholder="Address" name="destination[address]">
+                        <input type="text" id="address2" placeholder="Address" name="destination[address]" required>
                     </p>
                     <p>
                         <label for="city">City</label>
-                        <input type="text" id="city2" placeholder="City" name="destination[city]">
+                        <input type="text" id="city2" placeholder="City" name="destination[city]" required>
                     </p>
                     <p>
                         <label for="country">Country</label>
-                        <input type="text" id="country2" placeholder="Country" name="destination[country]">
+                        <input type="text" id="country2" placeholder="Country" name="destination[country]" required>
                     </p>
                     <p>
                         <label for="state">State</label>
-                        <input type="text" id="state2" placeholder="State" name="destination[state]">
+                        <input type="text" id="state2" placeholder="State" name="destination[state]" required>
                     </p>
                 </div>
                 <div class="wrapper-item3">
                     <p><button>Deliver now</button></p>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="error-container" style="display: none;">
+        <div class="error-content">
+            <h1 class="error-title">Oops!</h1>
+            <p class="error-message"></p>
+            <a href="packageDashboard.html" class="home-link">Go Back</a>
         </div>
     </div>
     <script src="../js/parcel.js"></script>

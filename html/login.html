@@ -15,12 +15,18 @@
                 <header>
                     <h1>Sign In</h1>
                 </header>
-                <p><input type="text"  placeholder="E-mail" id="email"></p>
-                <p><input type="password"  placeholder="Password" id="password"></p>
+                <p><input type="text"  placeholder="E-mail" id="email" required></p>
+                <p><input type="password"  placeholder="Password" id="password" required></p>
                 <p><button type="submit">Login</button></p>
                 <p>Not registered <a href="../index.html"> create account</a></p>
             </form>
-        
+            <div class="error-container" style="display: none;">
+                <div class="error-content">
+                    <h1 class="error-title">Oops!</h1>
+                    <p class="error-message">Something went wrong. Please try again later.</p>
+                    <a href="/" class="home-link">Go Back </a>
+                </div>
+            </div>
             <script src="../js/login.js"></script>
         </body>
         </html>

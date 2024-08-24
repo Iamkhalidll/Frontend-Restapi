@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/errorMessage.css" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,13 @@
      <div class="packageContainer"></div> 
      <a href="package.html">Want to add a package?</a>
     </div>
-   
+    <div class="error-container" style="display: none;">
+        <div class="error-content">
+            <h1 class="error-title">Oops!</h1>
+            <p class="error-message">Something went wrong. Please try again later.</p>
+            <a href="/" class="home-link">Go Back </a>
+        </div>
+    </div>
     <script src="../js/packageDashboard.js"></script>
 </body>
 </html>

@@ -21,7 +21,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         localStorage.setItem('jwtToken', token); 
         if (response.ok) {
            (function redirectToPage() {
-              alert("login sucessful")
               window.location.href = "../html/packageDashboard.html";
           })();} 
         else {
